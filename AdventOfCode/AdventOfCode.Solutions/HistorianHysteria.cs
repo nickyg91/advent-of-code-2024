@@ -1,6 +1,6 @@
 namespace AdventOfCode.Solutions;
 
-public class HistorianHysteria : BaseSolution
+public class HistorianHysteria : BaseSolution<int>
 {
     private int[] LeftList { get; set; } = [];
     private int[] RightList { get; set;  } = [];
@@ -18,7 +18,7 @@ public class HistorianHysteria : BaseSolution
         }
     }
 
-    public int Solve()
+    public override int Solve()
     {
         ReadInput();
         Array.Sort(LeftList);
