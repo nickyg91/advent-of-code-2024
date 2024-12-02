@@ -5,7 +5,7 @@ public class HistorianHysteria : BaseSolution
     private int[] LeftList { get; set; } = [];
     private int[] RightList { get; set;  } = [];
 
-    public override void ReadInput()
+    protected override void ReadInput()
     {
         var contents = File.ReadAllLines($"{InputBasePath}/dec-1.txt");
         LeftList = new int[contents.Length];
@@ -20,6 +20,7 @@ public class HistorianHysteria : BaseSolution
 
     public int Solve()
     {
+        ReadInput();
         Array.Sort(LeftList);
         Array.Sort(RightList);
         var sum = 0;
