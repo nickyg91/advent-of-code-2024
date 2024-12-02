@@ -37,4 +37,16 @@ public class HistorianHysteria : BaseSolution<int>
         }
         return sum;
     }
+
+    public int SolvePartTwo()
+    {
+        var value = 0;
+        for (int i = 0; i < LeftList.Length; i++)
+        {
+            var count = RightList.Count(x => x == LeftList[i]);
+            value += LeftList[i] * count;
+        }
+
+        return value;
+    }
 }

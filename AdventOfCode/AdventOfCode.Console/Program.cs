@@ -5,6 +5,6 @@ using AdventOfCode.Solutions;
 Console.WriteLine("Hello, Advent of Code!");
 Console.WriteLine("Here is the solution for Day 1");
 var historianHysteria = new HistorianHysteria();
-var result = historianHysteria.Solve();
-Console.WriteLine($"Solution: {result}");
+Console.WriteLine($"Solution: {historianHysteria.Solve()}");
+Console.WriteLine($"Solution Part 2: {historianHysteria.SolvePartTwo()}");
 Console.ReadLine();
