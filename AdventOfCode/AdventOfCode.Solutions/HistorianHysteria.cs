@@ -2,36 +2,36 @@ namespace AdventOfCode.Solutions;
 
 public class HistorianHysteria : BaseSolution
 {
-    private int[] FirstList { get; set; } = [];
-    private int[] SecondList { get; set;  } = [];
+    private int[] LeftList { get; set; } = [];
+    private int[] RightList { get; set;  } = [];
 
     public override void ReadInput()
     {
         var contents = File.ReadAllLines($"{InputBasePath}/dec-1.txt");
-        FirstList = new int[contents.Length];
-        SecondList = new int[contents.Length];
+        LeftList = new int[contents.Length];
+        RightList = new int[contents.Length];
         for (int i = 0; i < contents.Length; i++)
         {
             var numbers = contents[i].Split("   ");
-            FirstList[i] = int.Parse(numbers[0]);
-            SecondList[i] = int.Parse(numbers[1]);
+            LeftList[i] = int.Parse(numbers[0]);
+            RightList[i] = int.Parse(numbers[1]);
         }
     }
 
     public int Solve()
     {
-        Array.Sort(FirstList);
-        Array.Sort(SecondList);
+        Array.Sort(LeftList);
+        Array.Sort(RightList);
         var sum = 0;
-        for (int i = 0; i < FirstList.Length; i++)
+        for (int i = 0; i < LeftList.Length; i++)
         {
-            if (FirstList[i] < SecondList[i])
+            if (LeftList[i] < RightList[i])
             {
-                sum +=  SecondList[i] - FirstList[i];
+                sum +=  RightList[i] - LeftList[i];
             }
             else
             {
-                sum +=  FirstList[i] - SecondList[i];
+                sum +=  LeftList[i] - RightList[i];
             }
         }
         return sum;
